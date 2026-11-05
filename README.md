@@ -55,7 +55,14 @@
 | [02 开源项目](docs/tools/02-open-source.md) | GitHub 高星 GEO 项目：AutoGEO、GEOInflow、elmo、geo-check 等。 |
 | [03 商业监测平台](docs/tools/03-commercial-platforms.md) | Profound、Peec、Otterly、Semrush AIO 等商业平台对比。 |
 
-### 四、案例分析（docs/case-studies/）
+### 四、GEO 逆向（docs/reverse/）
+
+| 文档 | 一句话简介 |
+|------|-----------|
+| [01 黑盒里探规则](docs/reverse/01-black-box-probing.md) | 把引擎当黑盒：四段管线、五种探测手法（金丝雀页/单变量改写/幽灵引用鉴别）。 |
+| [02 拆竞品的引用](docs/reverse/02-competitor-reverse.md) | 竞品金牌页五步拆解法：拆结构、拆阵地、拆差距类型，对症施工。 |
+
+### 五、案例分析（docs/case-studies/）
 
 | 文档 | 一句话简介 |
 |------|-----------|
@@ -76,6 +83,8 @@
 
 **长期建设**：advanced/04 → 05 → 06 + guide/10 的信源优先级，第三方声量是慢变量，越早越好。
 
+**想提速**：卡在某个问题没思路时，读 reverse/ 两篇——从引擎行为和竞品引用里反推规则，比自己闷头试快。
+
 ## 资料口径说明
 
 - 所有数据均标注来源链接；标注"自报数据"的是厂商营销口径，未经独立核验。
@@ -93,6 +102,7 @@ geo-book/
     ├── guide/           # 入门指南（10 篇）
     ├── advanced/        # 进阶实践（13 篇）
     ├── tools/           # 工具与开源项目（3 篇）
+    ├── reverse/         # GEO 逆向（2 篇）
     └── case-studies/    # 案例分析（4 篇）
 ```
 

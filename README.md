@@ -28,6 +28,7 @@
 | [08 上手首查：30 分钟自检](docs/guide/08-first-audit.md) | 不装工具，30 分钟搞清楚 AI 现在能不能看到你。 |
 | [09 提示词与问题集研究](docs/guide/09-prompt-research.md) | AI 时代的关键词研究：五路找问题 + 冻结问题集设计规则。 |
 | [10 中文信源生态实测榜](docs/guide/10-cn-source-ranking.md) | 18.7 万条引用实算：官网仅占 1.37%、榜单站霸榜、各引擎生态割据。 |
+| [11 新站冷启动](docs/guide/11-cold-start.md) | 零权重新站拿首次引用：时间窗预期、空位题、借势平台、引用寿命。 |
 
 ### 二、进阶实践（docs/advanced/）
 
@@ -62,7 +63,20 @@
 | [01 黑盒里探规则](docs/reverse/01-black-box-probing.md) | 把引擎当黑盒：四段管线、五种探测手法（金丝雀页/单变量改写/幽灵引用鉴别）。 |
 | [02 拆竞品的引用](docs/reverse/02-competitor-reverse.md) | 竞品金牌页五步拆解法：拆结构、拆阵地、拆差距类型，对症施工。 |
 
-### 五、案例分析（docs/case-studies/）
+### 五、国内外差异（docs/cn-vs-global/）
+
+| 文档 | 一句话简介 |
+|------|-----------|
+| [01 结构性差异总览](docs/cn-vs-global/01-structural-differences.md) | 中文 GEO 不是英文版翻译：生态割据、官媒权重、阵地选择先于内容优化。 |
+| [02 官媒信源层与发稿](docs/cn-vs-global/02-cn-official-media.md) | 中国特有层：官媒背书的三重机制、合规边界、四步实操与成本预期。 |
+
+### 六、行业动态（docs/news/）
+
+| 文档 | 一句话简介 |
+|------|-----------|
+| [01 信号日志](docs/news/01-signal-log.md) | 活页勘误表：只收改变打法的已核实信号，每条带"影响"与置信级。 |
+
+### 七、案例分析（docs/case-studies/）
 
 | 文档 | 一句话简介 |
 |------|-----------|
@@ -103,6 +117,8 @@ geo-book/
     ├── advanced/        # 进阶实践（13 篇）
     ├── tools/           # 工具与开源项目（3 篇）
     ├── reverse/         # GEO 逆向（2 篇）
+    ├── cn-vs-global/    # 国内外差异（2 篇）
+    ├── news/            # 行业动态（1 篇·活页）
     └── case-studies/    # 案例分析（4 篇）
 ```
 

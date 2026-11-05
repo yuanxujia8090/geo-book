@@ -62,4 +62,4 @@ c.sql("""SELECT domain, sum(deduplicated_citation_count) cit,
 - 第三方阵地方法论：[第三方声量建设](../advanced/05-third-party-presence.md)
 
 ---
-*上一篇：[提示词与问题集研究](09-prompt-research.md) ｜ 下一篇：[进阶-技术可达性实操](../advanced/09-technical-accessibility.md)*
+*上一篇：[提示词与问题集研究](09-prompt-research.md) ｜ 下一篇：[新站冷启动](11-cold-start.md)*

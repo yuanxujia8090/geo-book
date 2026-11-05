@@ -61,4 +61,4 @@ Perplexity 对新站/新鲜内容最友好、反馈最快（guide/06）。新站
 - 首次引用时间度量：https://maxaeo.ai/blog/time-to-citation-ai-search/
 
 ---
-*上一篇：[中文信源生态实测榜](10-cn-source-ranking.md) ｜ 下一篇：[上手首查](08-first-audit.md)（动手）*
+*上一篇：[中文信源生态实测榜](10-cn-source-ranking.md) ｜ 下一篇：[进阶-内容优化](../advanced/01-content-optimization.md)（入门篇完，从这里进进阶）*

@@ -9,16 +9,18 @@ Phase 1 诊断(1周) → Phase 2 地基修复(1-2周) → Phase 3 内容与声�
 ```
 
 ### Phase 1 诊断
-- [ ] 跑基线：20-50 个目标问题 × 各引擎，记录提及/引用（见[度量篇](07-measurement.md)）。
-- [ ] AI 爬虫可达性：robots.txt、CDN 开关、`geo-check` 扫描。
+- [ ] 建问题集：五路找问题 + 冻结（见[提示词研究](../guide/09-prompt-research.md)）。
+- [ ] 跑基线：30 分钟首查 + 手工监测协议（见[上手首查](../guide/08-first-audit.md)、[度量篇](07-measurement.md)）。
+- [ ] AI 爬虫可达性：robots.txt、CDN 开关、curl 正文验证（见[技术可达性](09-technical-accessibility.md)）。
 - [ ] 抓取验证：site: 查询 / 引擎内直接问"总结 example.com 的内容"。
 - [ ] 竞品对比：谁已被引用、在哪些页面被引用。
 
 ### Phase 2 地基修复
+- [ ] 渲染修复：CSR 站 SSR/SSG 化，确保 curl 拿得到正文（见[技术可达性](09-technical-accessibility.md)——这是新手最大隐形坑）。
 - [ ] 放行检索类爬虫（OAI-SearchBot、PerplexityBot、Google-Extended…）。
 - [ ] 部署核心 Schema：Organization / Article / FAQPage（见[Schema 篇](02-schema-structured-data.md)）。
 - [ ] 发布 llms.txt + 关键页 .md 版本（见[llms.txt 篇](03-llms-txt.md)）。
-- [ ] 修复抓取障碍：JS 渲染内容 SSR 化、去掉正文弹窗。
+- [ ] 提交索引：Search Console + Bing Webmaster + IndexNow（见[技术可达性](09-technical-accessibility.md)）。
 
 ### Phase 3 内容与声量
 - [ ] Top 10 问题各建/改一页：问句式标题 + 答案前置 + 数据锚点（见[内容篇](01-content-optimization.md)）。

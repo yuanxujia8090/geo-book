@@ -48,4 +48,4 @@ AI 引用的是**片段**而不是整页。每个关键段落都要能脱离上�
 - 三框架实测（改写策略对比）：https://wetheflywheel.com/en/ai-search/generative-engine-optimization/
 
 ---
-*上一篇：[提示词与问题集研究](../guide/09-prompt-research.md) ｜ 下一篇：[结构化数据与 Schema](02-schema-structured-data.md)*
+*上一篇：[新站冷启动](../guide/11-cold-start.md)（入门篇完，从这里进进阶） ｜ 下一篇：[结构化数据与 Schema](02-schema-structured-data.md)*

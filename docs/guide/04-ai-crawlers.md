@@ -54,7 +54,19 @@ User-agent: Googlebot
 Allow: /
 ```
 
-注意：CDN 层（Cloudflare 等）有独立的"AI bot 拦截"开关，robots.txt 写了放行仍可能被 CDN 拦——需两边核对。
+注意：**CDN 层（Cloudflare 等）有独立的"AI bot 拦截"开关，robots.txt 写了放行仍可能被 CDN 拦**——需两边核对（验证方法见[技术可达性实操](../advanced/09-technical-accessibility.md)的 UA 差异探测）。
+
+## robots.txt 的三种隐形封禁（RFC 9309 语义，逐行正则会漏）
+
+多数在线检测工具按行正则判断，会漏掉三种真实存在的封禁形态：
+
+1. **通配符连坐**：`User-agent: * / Disallow: /` 会封掉**所有没有专属组的 AI 爬虫**——最常见的"无意封禁"：你以为只拦了垃圾爬虫，实际把 PerplexityBot 也关了。
+2. **共享 UA 组**：多个 `User-agent:` 行共享一组规则时，逐行正则会把第二个 UA 判成空规则，误报"已放行"。
+3. **特异性覆盖**：专属组存在时通配符组整组失效——写了 `User-agent: GPTBot / Allow: /`，GPTBot 就无视通配符组里的任何 Disallow（想拦也拦不住）。
+
+**robots 放行 ≠ 真放行**：WAF/CDN（Cloudflare Bot Fight、阿里云 WAF）可对 AI 爬虫 UA 单独返回 403，浏览器里一切正常，站长自己看不出来。必须用真实 UA（GPTBot/ClaudeBot/PerplexityBot）逐个抓一次首页做差异探测。
+
+**X-Robots-Tag 响应头 noindex**：页面源码里看不到，常是 CDN/中间件全局注入，最容易带病上线——检查响应头而不只查 meta。
 
 ## 延伸阅读
 

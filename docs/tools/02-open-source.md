@@ -6,10 +6,14 @@
 
 | 项目 | Stars | 语言 | 一句话 |
 |------|-------|------|--------|
+| [aigclink/geolook](https://github.com/aigclink/geolook) | 808 | Python | **端到端实施平台**（非纯监测）：状态→诊断→工单→资产生成→自动验收→客户交付包；含 RFC 9309 robots 解析、WAF-UA 差异探测、Chrome 采样助手、17 引擎矩阵（中文引擎一等公民）；仅依赖 requests/bs4/lxml |
 | [yaojingang/GEOInflow](https://github.com/yaojingang/GEOInflow) | 803 | TypeScript | 自托管 Web+AI 爬虫分析：追踪访客、AI 搜索引荐、抓取日志 |
+| [yaojingang/GEOLab](https://github.com/yaojingang/GEOLab) | 748 | — | **研究数据总仓**：54 篇 GEO/AEO 论文库 + CN-GEO 中文引用数据集（187,818 条去重引用）+ 海外跨平台实验数据（602 prompts），可 duckdb 复算 |
 | [elmohq/elmo](https://github.com/elmohq/elmo) | 566 | TypeScript | 开源 AEO/GEO 平台，追踪 ChatGPT/Claude/Perplexity 中的品牌表现 |
-| [yaojingang/GEORank](https://github.com/yaojingang/GEORank) | 532 | Python | 开源 GEO 排名与生成式引擎优化平台 |
+| [yaojingang/GEORank](https://github.com/yaojingang/GEORank) | 532 | Python | 完整自托管 GEO 工作台（Next.js+FastAPI+PG/Redis/Qdrant/Neo4j）：多人协作/对客交付场景；JSON-LD/llms.txt/标题生成器可直接用 |
 | [ai-search-guru/getcito](https://github.com/ai-search-guru/getcito-worlds-first-open-source-aio-aeo-or-geo-tool) | 505 | TypeScript | 自称首个开源 AIO/AEO/GEO 工具 |
+| [yaojingang/GEOFlow](https://github.com/yaojingang/GEOFlow) | — | PHP/Laravel | 规模化 GEO 内容生产与分发运营系统（Docker） |
+| [yaojingang/yao-geo-skills](https://github.com/yaojingang/yao-geo-skills) | — | — | 21 个细分环节 agent 技能包：意图挖掘/页面体检/路线图/解释页/对比页/标题优化等 |
 | [AI2HU/gego](https://github.com/AI2HU/gego) | 109 | Go | 跨 LLM 的品牌 GEO 追踪 |
 
 ## 研究与框架
@@ -46,10 +50,15 @@
 
 ## 选型建议
 
-- 想**看懂学界怎么做**：AutoGEO + GEO-bench。
-- 想**自建监测**：GEOInflow（含爬虫日志）或 elmo。
+- 想**看懂学界怎么做**：AutoGEO + GEO-bench；要**一手数据自己复算**：GEOLab（parquet + duckdb）。
+- 想**单人跑完整 GEO 项目并交付客户**：geolook（零基础设施，文件即数据库，`git init` 即备份）。
+- 想**自建监测**：GEOInflow（含爬虫日志）或 elmo；多人协作/产品化：GEORank。
 - 想**零成本审计**：geo-check 跑一遍，10 分钟出报告。
-- 用 **Claude Code/Agent 工作流**：gtm-engineer-skills 或中文的 GEO-Content-Optimizer-Skill。
+- 用 **Claude Code/Agent 工作流**：gtm-engineer-skills、yao-geo-skills 或中文的 GEO-Content-Optimizer-Skill。
+
+## 一个有用的品类区分：监测 SaaS vs 实施平台
+
+多数商业 GEO 产品是**监测**（看提及率、给建议、数据在厂商云）；少数开源项目做**实施**（诊断→工单→生成资产→程序化验收→交付）。选型先问自己要哪种：只要仪表盘选监测，要"干完活能验收"选实施平台。监测数据在谁手里也是企业选型的硬约束。
 
 ---
 *上一篇：[工具总览](01-tools-overview.md) ｜ 下一篇：[商业监测平台](03-commercial-platforms.md)*

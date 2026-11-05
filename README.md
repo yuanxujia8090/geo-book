@@ -6,7 +6,11 @@
 
 **零基础？先读 → [导读：GEO 是一条什么线](docs/WALKTHROUGH.md)**（大白话版主线，10 分钟）
 
-**全局一张图 → [知识地图](knowledge-map.html)**（浏览器打开）
+## 知识地图
+
+![GEO 知识库知识地图](assets/knowledge-map.png)
+
+*高清交互版 → [knowledge-map.html](knowledge-map.html)（浏览器打开）*
 
 ## 为什么要学 GEO
 

@@ -54,4 +54,4 @@ chatgpt\.com|chat\.openai\.com|perplexity\.ai|gemini\.google\.com|copilot\.micro
 - GA4 识别不到的部分：https://wandered.io/guides/track-ai-traffic-google-analytics
 
 ---
-*上一篇：[技术可达性实操](09-technical-accessibility.md) ｜ 下一篇：[案例-90天端到端实战](../case-studies/04-end-to-end-90days.md)*
+*上一篇：[技术可达性实操](09-technical-accessibility.md) ｜ 下一篇：[四层依赖模型与量化判据](11-four-layer-model.md)*

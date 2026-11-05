@@ -25,6 +25,7 @@
 | [07 中文 AI 引擎生态](docs/guide/07-chinese-ai-engines.md) | 豆包、DeepSeek、Kimi、元宝的引用行为差异与中文 GEO 打法。 |
 | [08 上手首查：30 分钟自检](docs/guide/08-first-audit.md) | 不装工具，30 分钟搞清楚 AI 现在能不能看到你。 |
 | [09 提示词与问题集研究](docs/guide/09-prompt-research.md) | AI 时代的关键词研究：五路找问题 + 冻结问题集设计规则。 |
+| [10 中文信源生态实测榜](docs/guide/10-cn-source-ranking.md) | 18.7 万条引用实算：官网仅占 1.37%、榜单站霸榜、各引擎生态割据。 |
 
 ### 二、进阶实践（docs/advanced/）
 
@@ -40,6 +41,9 @@
 | [08 GEO 工作流与审计清单](docs/advanced/08-workflow-checklist.md) | 从诊断到执行到复测的完整落地流程与可复制清单。 |
 | [09 技术可达性实操](docs/advanced/09-technical-accessibility.md) | JS 渲染让 AI 隐身？curl 验证、SSR/SSG 修复、IndexNow 提交。 |
 | [10 GA4 AI 引荐流量配置](docs/advanced/10-ga4-ai-referral.md) | 把 AI 引荐流量从 GA4 里剥出来：原生渠道 + 自定义正则 + 探索报表。 |
+| [11 四层依赖模型与量化判据](docs/advanced/11-four-layer-model.md) | 访问→定向→理解→可引用：修复顺序判据 + 全库最硬量化阈值。 |
+| [12 采样纪律与证据分级](docs/advanced/12-sampling-discipline.md) | 防自欺规程：证据 A-D 分级、采样环境四档、API≠Web、归因下界。 |
+| [13 品牌事实卡与内容模板](docs/advanced/13-brand-facts-templates.md) | 单一事实源：事实卡骨架 + 定义型/对比型页面可直接套的模板。 |
 
 ### 三、工具与开源项目（docs/tools/）
 
@@ -60,21 +64,22 @@
 
 ## 学习路径
 
-**零基础（第 1 周）**：guide/01 → 02 → 03 → 04 → 05 → 06 → 07 → 08 → 09，建立"AI 怎么找到并引用内容"的心智模型，完成首次站点自检。
+**零基础（第 1 周）**：guide/01 → 09 → 08 → 10，建心智模型 → 建问题集 → 首查出基线 → 看懂中文信源格局。
 
-**修地基（第 2 周）**：advanced/09 → 02 → 03，先修 CSR 渲染问题，再铺 Schema 和 llms.txt，提交索引。
+**修地基（第 2 周）**：advanced/11（四层模型定顺序）→ 09（渲染/爬虫/索引）→ 02 → 03（Schema/llms.txt）。**顺序不能倒：访问层不通，下游全白做。**
 
-**改内容（第 3-4 周）**：advanced/01 → 08，按冻结问题集逐页改造，跑完整工作流。
+**改内容（第 3-4 周）**：advanced/13（事实卡+模板）→ 01（按判据改造），按冻结问题集逐页落地，跑 advanced/08 完整工作流。
 
-**放大与度量（第 5 周起）**：advanced/07 → 10，建立手工监测协议 + GA4 AI 引荐报表，每周跑基线看趋势。
+**放大与度量（第 5 周起）**：advanced/12（采样纪律）→ 07 → 10（手工协议+GA4 报表），每周跑基线看趋势。
 
-**长期建设**：advanced/04 → 05 → 06，第三方声量与训练数据是慢变量，越早开始越好。
+**长期建设**：advanced/04 → 05 → 06 + guide/10 的信源优先级，第三方声量是慢变量，越早越好。
 
 ## 资料口径说明
 
 - 所有数据均标注来源链接；标注"自报数据"的是厂商营销口径，未经独立核验。
 - GitHub star 数核验于 2026-11-05。
-- 本库以英文一手资料为主（arXiv / GitHub / X.com），中文生态单独成篇。
+- 一手资料：arXiv / GitHub / X.com + CN-GEO 开源数据集实算（中文生态单独成篇）。
+- 方法论部分章节蒸馏自开源项目 geolook 的 references 方法层（判据均已溯源到公开实证数据）。
 
 ## 项目结构
 
@@ -83,8 +88,8 @@ geo-book/
 ├── README.md            # 本文件：总目录 + 每篇一句话简介
 ├── SUMMARY.md           # 学习路径与内容总结
 └── docs/
-    ├── guide/           # 入门指南（9 篇）
-    ├── advanced/        # 进阶实践（10 篇）
+    ├── guide/           # 入门指南（10 篇）
+    ├── advanced/        # 进阶实践（13 篇）
     ├── tools/           # 工具与开源项目（3 篇）
     └── case-studies/    # 案例分析（4 篇）
 ```

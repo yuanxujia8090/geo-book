@@ -76,4 +76,4 @@ grep -E "GPTBot|OAI-SearchBot|PerplexityBot|ClaudeBot" /var/log/nginx/access.log
 - Bing+IndexNow 与 AI 搜索的边界：https://eseospace.com/blog/bing-webmaster-tools-indexnow-ai-search/
 
 ---
-*上一篇：[提示词与问题集研究](../guide/09-prompt-research.md) ｜ 下一篇：[GA4 AI 引荐流量配置](10-ga4-ai-referral.md)*
+*上一篇：[中文信源生态实测榜](../guide/10-cn-source-ranking.md) ｜ 下一篇：[GA4 AI 引荐流量配置](10-ga4-ai-referral.md)*

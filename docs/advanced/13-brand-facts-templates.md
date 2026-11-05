@@ -79,4 +79,4 @@ AI 回答"A 和 B 哪个好"时几乎必然找对比内容。规则：
 - 内容写法八法：[内容优化](01-content-optimization.md)
 
 ---
-*上一篇：[采样纪律与证据分级](12-sampling-discipline.md) ｜ 回到 [README](../../README.md)*
+*上一篇：[采样纪律与证据分级](12-sampling-discipline.md) ｜ 下一篇：[案例-90天端到端实战](../case-studies/04-end-to-end-90days.md)*

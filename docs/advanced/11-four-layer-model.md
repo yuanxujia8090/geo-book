@@ -73,4 +73,4 @@
 - 实操审计实现参考：https://github.com/aigclink/geolook
 
 ---
-*上一篇：[技术可达性实操](09-technical-accessibility.md) ｜ 下一篇：[采样纪律与证据分级](12-sampling-discipline.md)*
+*上一篇：[GA4 AI 引荐流量配置](10-ga4-ai-referral.md) ｜ 下一篇：[采样纪律与证据分级](12-sampling-discipline.md)*

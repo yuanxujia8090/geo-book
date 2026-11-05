@@ -51,4 +51,4 @@ Semrush/Ahrefs 的 AI 关键词/prompt 库、Otterly Prompt Explorer 等提供�
 - 提示词发现法：https://surferstack.com/guides/the-prompt-discovery-method-how-to-find-high-value-ai-search-queries-your-competitors-dont-know-exist-in-2026
 
 ---
-*上一篇：[上手首查](08-first-audit.md) ｜ 下一篇：[进阶-技术可达性](../advanced/09-technical-accessibility.md)*
+*上一篇：[上手首查](08-first-audit.md) ｜ 下一篇：[中文信源生态实测榜](10-cn-source-ranking.md)*

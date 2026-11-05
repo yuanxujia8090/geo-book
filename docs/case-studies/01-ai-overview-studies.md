@@ -29,4 +29,4 @@
 3. 引用格局在漂移（2025→2026 引用来源放宽），监测要持续而非一次性。
 
 ---
-*上一篇：[GEO 逆向（二）：拆竞品的引用](../reverse/02-competitor-reverse.md) ｜ 下一篇：[中文引擎实测案例](02-cn-engine-tests.md)*
+*上一篇：[行业动态信号日志](../news/01-signal-log.md) ｜ 下一篇：[中文引擎实测案例](02-cn-engine-tests.md)*

@@ -55,4 +55,4 @@
 - 电商场景差距分析：https://geniusecommerce.com/blog/how-to-perform-a-competitor-ai-citation-gap-analysis
 
 ---
-*上一篇：[黑盒里探规则](01-black-box-probing.md) ｜ 回到 [README](../../README.md)*
+*上一篇：[黑盒里探规则](01-black-box-probing.md) ｜ 下一篇：[国内外GEO结构性差异总览](../cn-vs-global/01-structural-differences.md)*

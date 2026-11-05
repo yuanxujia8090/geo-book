@@ -29,4 +29,4 @@
 3. 引用格局在漂移（2025→2026 引用来源放宽），监测要持续而非一次性。
 
 ---
-*下一篇：[中文引擎实测案例](02-cn-engine-tests.md)*
+*上一篇：[商业监测平台](../tools/03-commercial-platforms.md) ｜ 下一篇：[中文引擎实测案例](02-cn-engine-tests.md)*

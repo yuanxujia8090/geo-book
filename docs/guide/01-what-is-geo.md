@@ -38,4 +38,4 @@ GEO 是通过组织、结构化、增强内容，使生成式引擎（Generative
 - Awesome GEO 论文清单：https://github.com/luka2chat/awesome-geo
 
 ---
-*来源核验于 2026-11-05。下一篇：[GEO vs SEO vs AEO](02-geo-vs-seo-vs-aeo.md)*
+*来源核验于 2026-11-05。这是全库第一篇，从这里开始 → 下一篇：[GEO vs SEO vs AEO](02-geo-vs-seo-vs-aeo.md)*

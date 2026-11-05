@@ -23,6 +23,8 @@
 | [05 AI 引用机制](docs/guide/05-how-ai-engines-cite.md) | AI 引擎选中并引用一个来源的决策链路：检索、可信度、片段匹配。 |
 | [06 主流海外引擎画像](docs/guide/06-major-engines.md) | ChatGPT Search / AI Overviews / Perplexity / Gemini / Grok 各自的信源偏好。 |
 | [07 中文 AI 引擎生态](docs/guide/07-chinese-ai-engines.md) | 豆包、DeepSeek、Kimi、元宝的引用行为差异与中文 GEO 打法。 |
+| [08 上手首查：30 分钟自检](docs/guide/08-first-audit.md) | 不装工具，30 分钟搞清楚 AI 现在能不能看到你。 |
+| [09 提示词与问题集研究](docs/guide/09-prompt-research.md) | AI 时代的关键词研究：五路找问题 + 冻结问题集设计规则。 |
 
 ### 二、进阶实践（docs/advanced/）
 
@@ -36,6 +38,8 @@
 | [06 进入 LLM 训练数据](docs/advanced/06-training-data-visibility.md) | 长期层：Common Crawl、数据授权协议与品牌沉淀。 |
 | [07 GEO 度量与监测](docs/advanced/07-measurement.md) | AI 提及率、引用份额、Share of Voice：怎么量化 GEO 效果。 |
 | [08 GEO 工作流与审计清单](docs/advanced/08-workflow-checklist.md) | 从诊断到执行到复测的完整落地流程与可复制清单。 |
+| [09 技术可达性实操](docs/advanced/09-technical-accessibility.md) | JS 渲染让 AI 隐身？curl 验证、SSR/SSG 修复、IndexNow 提交。 |
+| [10 GA4 AI 引荐流量配置](docs/advanced/10-ga4-ai-referral.md) | 把 AI 引荐流量从 GA4 里剥出来：原生渠道 + 自定义正则 + 探索报表。 |
 
 ### 三、工具与开源项目（docs/tools/）
 
@@ -52,16 +56,19 @@
 | [01 AI Overviews 引用研究](docs/case-studies/01-ai-overview-studies.md) | CXL、Wellows 等机构的引用数据研究说明了什么。 |
 | [02 中文引擎实测案例](docs/case-studies/02-cn-engine-tests.md) | 国产六大引擎 12 题实测：引用率与信源偏好一手数据。 |
 | [03 品牌 GEO 案例](docs/case-studies/03-brand-cases.md) | Wikipedia 效应 3.2 倍提及、HVAC 本地案例等可借鉴打法。 |
+| [04 端到端 90 天实战推演](docs/case-studies/04-end-to-end-90days.md) | 虚拟站点从零到被引用：全库方法论串成一条带时间轴的执行线。 |
 
 ## 学习路径
 
-**零基础（第 1-2 周）**：guide/01 → 02 → 03 → 04 → 05，先建立"AI 怎么找到并引用内容"的心智模型。
+**零基础（第 1 周）**：guide/01 → 02 → 03 → 04 → 05 → 06 → 07 → 08 → 09，建立"AI 怎么找到并引用内容"的心智模型，完成首次站点自检。
 
-**上手优化（第 3-4 周）**：advanced/01 → 02 → 03 → 08，边学边改自己的网站。
+**修地基（第 2 周）**：advanced/09 → 02 → 03，先修 CSR 渲染问题，再铺 Schema 和 llms.txt，提交索引。
 
-**放大与度量（第 5 周起）**：advanced/04 → 07，配合 tools/ 选一个监测工具跑基线。
+**改内容（第 3-4 周）**：advanced/01 → 08，按冻结问题集逐页改造，跑完整工作流。
 
-**长期建设**：advanced/05 → 06，第三方声量与训练数据是慢变量，越早开始越好。
+**放大与度量（第 5 周起）**：advanced/07 → 10，建立手工监测协议 + GA4 AI 引荐报表，每周跑基线看趋势。
+
+**长期建设**：advanced/04 → 05 → 06，第三方声量与训练数据是慢变量，越早开始越好。
 
 ## 资料口径说明
 
@@ -76,10 +83,10 @@ geo-book/
 ├── README.md            # 本文件：总目录 + 每篇一句话简介
 ├── SUMMARY.md           # 学习路径与内容总结
 └── docs/
-    ├── guide/           # 入门指南（7 篇）
-    ├── advanced/        # 进阶实践（8 篇）
+    ├── guide/           # 入门指南（9 篇）
+    ├── advanced/        # 进阶实践（10 篇）
     ├── tools/           # 工具与开源项目（3 篇）
-    └── case-studies/    # 案例分析（3 篇）
+    └── case-studies/    # 案例分析（4 篇）
 ```
 
 ---

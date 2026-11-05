@@ -6,6 +6,8 @@
 
 **零基础？先读 → [导读：GEO 是一条什么线](docs/WALKTHROUGH.md)**（大白话版主线，10 分钟）
 
+**全局一张图 → [知识地图](knowledge-map.html)**（浏览器打开）
+
 ## 为什么要学 GEO
 
 - AI 搜索（ChatGPT、AI Overviews、豆包、Kimi）正在分流传统搜索流量，用户越来越多地直接看 AI 生成的答案而不是点蓝色链接。

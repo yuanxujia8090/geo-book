@@ -1,0 +1,262 @@
+/* kami-inspired theme layer for geo-book
+   色板/字体/表格/引文规则取自 tw93/kami (MIT) site/styles.css 与 long-doc 模板，
+   按 mdBook 0.5.3 DOM 结构重写。引用核验 2026-11-06。 */
+
+/* ---------- 1. 纸面色板（kami paper palette） ---------- */
+:root {
+    --kami-ivory: #faf9f5;
+    --kami-parchment: #f5f4ed;
+    --kami-warm-sand: #e8e6dc;
+    --kami-border: #e8e6dc;
+    --kami-border-soft: #e5e3d8;
+    --kami-edge: #dedbcf;
+    --kami-near-black: #141413;
+    --kami-dark-warm: #3d3d3a;
+    --kami-olive: #504e49;
+    --kami-stone: #6b6a64;
+    --kami-brand: #1B365D;
+    --kami-brand-light: #2D5A8A;
+    --kami-inline-code-bg: #f0eee6;
+
+    --bg: var(--kami-ivory);
+    --fg: var(--kami-near-black);
+    --links: var(--kami-brand);
+    --quote-bg: var(--kami-parchment);
+    --quote-border: var(--kami-warm-sand);
+    --table-border-color: var(--kami-border);
+    --table-header-bg: var(--kami-parchment);
+    --table-alternate-bg: var(--kami-ivory);
+    --searchbar-border-color: var(--kami-edge);
+    --searchbar-bg: var(--kami-ivory);
+    --searchbar-fg: var(--kami-near-black);
+    --searchbar-shadow-color: rgba(20, 20, 19, 0.06);
+    --searchresults-header-fg: var(--kami-stone);
+    --searchresults-border-color: var(--kami-border-soft);
+    --searchresults-li-bg: var(--kami-ivory);
+    --search-mark-bg: #f5e3c0;
+    --theme-popup-bg: var(--kami-parchment);
+    --theme-popup-border: var(--kami-edge);
+    --icons: var(--kami-stone);
+    --icons-hover: var(--kami-brand);
+    --copy-button-filter: invert(30%) sepia(10%) saturate(300%) hue-rotate(180deg);
+    --copy-button-filter-hover: invert(20%) sepia(15%) saturate(500%) hue-rotate(180deg);
+    --inline-code-color: var(--kami-dark-warm);
+    --sidebar-non-existant: var(--kami-stone);
+    --sidebar-fg: var(--kami-olive);
+    --sidebar-fg-hover: var(--kami-near-black);
+    --sidebar-bg: var(--kami-parchment);
+    --sidebar-active: var(--kami-brand);
+    --sidebar-spacer: var(--kami-border-soft);
+    --footer-style-border: var(--kami-border);
+}
+
+/* light 主题变量直接覆盖（mdBook 按 class 分主题） */
+.light, .rust, .coal { }
+.light {
+    --bg: var(--kami-ivory);
+    --fg: var(--kami-near-black);
+    --links: var(--kami-brand);
+    --quote-bg: var(--kami-parchment);
+    --quote-border: var(--kami-warm-sand);
+    --table-border-color: var(--kami-border);
+    --table-header-bg: var(--kami-parchment);
+    --sidebar-bg: var(--kami-parchment);
+    --sidebar-fg: var(--kami-olive);
+    --sidebar-active: var(--kami-brand);
+    --mono-font: "JetBrains Mono", "SF Mono", "Source Code Pro", Consolas, Monaco, monospace;
+}
+.coal, .navy, .ayu {
+    --bg: #1a1a18;
+    --fg: #d8d6cd;
+    --links: #7ba3d0;
+    --quote-bg: #232320;
+    --quote-border: #30302e;
+    --sidebar-bg: #141413;
+    --sidebar-fg: #a8a69c;
+    --sidebar-active: #9fc0e8;
+    --inline-code-color: #e0ded4;
+}
+
+/* ---------- 2. 衬线正文（kami serif stack） ---------- */
+html, body {
+    font-family: Charter, Georgia, "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "Noto Serif SC", Palatino, serif;
+}
+.coal, .navy, .ayu, .rust, .light {
+    font-family: Charter, Georgia, "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "Noto Serif SC", Palatino, serif;
+}
+h1, h2, h3, h4, h5, h6, .chapter-title {
+    font-family: inherit;
+    font-weight: 500;
+    color: var(--kami-near-black);
+    letter-spacing: 0;
+}
+.coal h1, .navy h1, .ayu h1, .coal h2, .navy h2, .ayu h2 { color: #e8e6dc; }
+
+main p {
+    line-height: 1.75;
+    font-size: 16px;
+}
+.chapter {
+    font-size: 16px;
+}
+.chapter p > code, li > code {
+    background: var(--kami-inline-code-bg);
+    border: 1px solid var(--kami-border-soft);
+    border-radius: 3px;
+    padding: 1px 5px;
+}
+.coal .chapter p > code, .navy .chapter p > code, .ayu .chapter p > code,
+.coal li > code, .navy li > code, .ayu li > code {
+    background: #2a2a27;
+    border-color: #3a3a36;
+}
+
+/* ---------- 3. 侧边栏：纸感 ---------- */
+.sidebar, nav.sidebar {
+    background: var(--kami-parchment);
+    color: var(--kami-olive);
+}
+.sidebar .sidebar-scrollbox {
+    padding: 10px 12px;
+}
+.sidebar .chapter li a {
+    color: var(--kami-olive);
+    font-size: 14.5px;
+    line-height: 1.6;
+}
+.sidebar .chapter li a:hover,
+.sidebar .chapter li a[aria-expanded="true"] {
+    color: var(--kami-brand);
+}
+.sidebar .chapter li > a.expanded,
+.sidebar .chapter li.active > a,
+.sidebar .chapter li.active a {
+    color: var(--kami-brand);
+    font-weight: 500;
+}
+.sidebar .chapter-title,
+.sidebar .logo-level {
+    color: var(--kami-near-black);
+    font-weight: 500;
+}
+.sidebar-resize-indicator {
+    background: transparent;
+}
+.sidebar-resize-indicator:hover {
+    background: var(--kami-warm-sand);
+}
+
+/* ---------- 4. 顶栏：去硬边 ---------- */
+.menu-bar, .top-b, #menu-bar {
+    background: var(--kami-ivory);
+    border-bottom: 1px solid var(--kami-border);
+    box-shadow: none;
+}
+.menu-bar i, .top-b i, #menu-bar i {
+    color: var(--kami-stone);
+}
+.menu-bar i:hover, .top-b i:hover, #menu-bar i:hover {
+    color: var(--kami-brand);
+    background: transparent;
+}
+#menu-bar .menu-spacer { border-color: var(--kami-border); }
+
+/* ---------- 5. 表格：kami hairline ---------- */
+table {
+    border-collapse: collapse;
+    font-size: 14.5px;
+}
+table th {
+    border: none;
+    border-bottom: 0.8pt solid var(--kami-edge);
+    background: transparent;
+    color: var(--kami-near-black);
+    font-weight: 500;
+    padding: 8px 10px;
+}
+table td {
+    border: none;
+    border-bottom: 0.4pt solid var(--kami-border);
+    background: transparent;
+    padding: 8px 10px;
+    vertical-align: top;
+    color: var(--kami-dark-warm);
+}
+table tr:nth-child(even) td { background: transparent; }
+table tr:hover td { background: var(--kami-parchment); }
+.coal table td, .navy table td, .ayu table td { color: #c5c3ba; }
+
+/* ---------- 6. 引文块：kami quote 风 ---------- */
+blockquote {
+    border-left: 2px solid var(--kami-brand-light);
+    background: transparent;
+    color: var(--kami-olive);
+    margin: 14px 18px;
+    padding: 2px 0 2px 16px;
+    font-size: 15px;
+}
+blockquote p { color: inherit; }
+.coal blockquote, .navy blockquote, .ayu blockquote {
+    border-left-color: #7ba3d0;
+    color: #b8b6ac;
+}
+
+/* ---------- 7. 代码块：暖纸底 ---------- */
+pre {
+    background: var(--kami-parchment);
+    border: 1px solid var(--kami-border-soft);
+    border-radius: 4px;
+}
+.coal pre, .navy pre, .ayu pre {
+    background: #20201d;
+    border-color: #30302e;
+}
+pre code { background: transparent; }
+
+/* ---------- 8. 搜索 ---------- */
+#search-input, .searchbox {
+    background: var(--kami-ivory);
+    border: 1px solid var(--kami-edge);
+    border-radius: 4px;
+    color: var(--kami-near-black);
+}
+#search-results > p:first-child { color: var(--kami-stone); }
+.searchresults li a { color: var(--kami-brand); }
+
+/* ---------- 9. 页脚导航：hairline ---------- */
+.nav-chapters, .previous, .next {
+    background: transparent;
+    color: var(--kami-brand);
+    border-radius: 0;
+}
+.nav-chapters:hover, .previous:hover, .next:hover {
+    background: var(--kami-parchment);
+    color: var(--kami-brand-light);
+}
+.previous, .next {
+    font-size: 15px;
+}
+.coal .nav-chapters, .navy .nav-chapters, .ayu .nav-chapters {
+    background: transparent;
+}
+
+/* ---------- 10. 细节 ---------- */
+hr {
+    border: none;
+    border-top: 0.5pt solid var(--kami-border);
+    margin: 28px 0;
+}
+::selection {
+    background: #dbe5f0;
+}
+a { text-decoration: none; }
+.content a, .chapter a { color: var(--kami-brand); }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+kbd {
+    background: var(--kami-parchment);
+    border: 1px solid var(--kami-edge);
+    border-radius: 3px;
+    color: var(--kami-dark-warm);
+}
+kbd::before, kbd::after { content: ""; border: none; }
+.coal ::selection, .navy ::selection, .ayu ::selection { background: #3a4a5e; }

@@ -11,6 +11,8 @@ create-missing = false
 
 [output.html]
 default-theme = "light"
+preferred-dark-theme = "coal"
+additional-css = ["theme/kami.css"]
 git-repository-url = "https://github.com/yuanxujia8090/geo-book"
 
 [output.html.redirect]

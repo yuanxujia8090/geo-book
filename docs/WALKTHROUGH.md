@@ -104,6 +104,18 @@ AI 抄的是**一段话**，不是整页。所以每段都要能脱离上下文�
 
 → [advanced/12 采样纪律](advanced/12-sampling-discipline.md)、[advanced/07 度量](advanced/07-measurement.md)、[advanced/08 工作流](advanced/08-workflow-checklist.md)
 
+## 开源世界里有三种物种
+
+想挑个工具上手时，先分清货架上摆的是哪类货：
+
+1. **平台**——一个你自己在服务器上跑的系统，从体检到工单到验收一条龙（代表：geolook、elmo）。重，但管得全。
+2. **技能包**——装进 Claude Code/Codex 这类 AI 助手的一包说明书，你说一句话它替你干活（代表：geo-doctor 中文免费、gtm-engineer-skills 英文）。轻，但质量看你手里模型的本事。
+3. **论文代码**——大学研究组公开的方法和数据集，不给你用，给你看懂规律（代表：AutoGEO、GEOLab 的 18 万条中文引用数据）。
+
+先选物种再看星——这个赛道刷星的不少，判定方法在选型地图里。
+
+→ [projects/01 选型地图](projects/01-selection-map.md)
+
 ## 三个最容易搞错的
 
 1. **GEO 不是改话术骗 AI。** 有研究专门测过操纵性改写，短期有效、会被反制。正道是：机器进得来、内容有硬事实、外面有人替你说话。

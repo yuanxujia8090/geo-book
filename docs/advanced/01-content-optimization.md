@@ -40,6 +40,8 @@ AI 引用的是**片段**而不是整页。每个关键段落都要能脱离上�
 
 被引 Top 四分位页面画像：**1,943 词均 / 10.6 个标题 / 47.5 个段落 / 列表密度 0.428**。起步标准：≥1000 词、H2 ≥6、含数字+定义+对比+步骤四类抽取块。全部阈值出处：[四层依赖模型与量化判据](11-four-layer-model.md)。
 
+上述是跨引擎通用判据。要更进一步——把**特定引擎**的偏好从行为里挖成规则再改写，见 [14 引擎偏好规则与内容重写](14-preference-rules-rewriting.md)。
+
 ## 延伸阅读
 
 - Backlinko GEO 指南：https://backlinko.com/generative-engine-optimization-geo

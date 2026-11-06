@@ -53,14 +53,26 @@
 | [11 四层依赖模型与量化判据](docs/advanced/11-four-layer-model.md) | 访问→定向→理解→可引用：修复顺序判据 + 全库最硬量化阈值。 |
 | [12 采样纪律与证据分级](docs/advanced/12-sampling-discipline.md) | 防自欺规程：证据 A-D 分级、采样环境四档、API≠Web、归因下界。 |
 | [13 品牌事实卡与内容模板](docs/advanced/13-brand-facts-templates.md) | 单一事实源：事实卡骨架 + 定义型/对比型页面可直接套的模板。 |
+| [14 引擎偏好规则与内容重写](docs/advanced/14-preference-rules-rewriting.md) | AutoGEO 方法落地：从引擎行为挖偏好规则→按规则重写→双指标防改烂。 |
 
 ### 三、工具与开源项目（docs/tools/）
 
 | 文档 | 一句话简介 |
 |------|-----------|
 | [01 工具总览](docs/tools/01-tools-overview.md) | 监测/优化/审计三类工具选型速查表。 |
-| [02 开源项目](docs/tools/02-open-source.md) | GitHub 高星 GEO 项目：AutoGEO、GEOInflow、elmo、geo-check 等。 |
+| [02 开源项目](docs/tools/02-open-source.md) | GitHub 高星 GEO 项目速查目录：四物种分类、许可证标注、存疑区。 |
 | [03 商业监测平台](docs/tools/03-commercial-platforms.md) | Profound、Peec、Otterly、Semrush AIO 等商业平台对比。 |
+
+### 三·五、开源项目深析（docs/projects/）
+
+| 文档 | 一句话简介 |
+|------|-----------|
+| [01 选型地图](docs/projects/01-selection-map.md) | 四物种分类学 + 决策树 + 许可证/活跃度/数据主权三硬约束 + 刷星存疑区。 |
+| [02 实施平台深析](docs/projects/02-implementation-platforms.md) | geolook/GEORank/GEOFlow/GEOInflow：优势-不足-场景三刀切，AGPL 雷区标注。 |
+| [03 监测平台对比](docs/projects/03-monitoring-trackers.md) | elmo/limelit/geo-aeo-tracker/oneglanse/gego：引擎覆盖×数据主权×MCP。 |
+| [04 Agent 技能包深析](docs/projects/04-agent-skills.md) | gtm/geo-optimizer/yao-geo-skills/geo-doctor/recomby：五包横评，中文支持对比。 |
+| [05 研究框架与数据集](docs/projects/05-research-frameworks.md) | AutoGEO/GEOLab/E-GEO/SafeGEO：机理与一手数据，全库数字底座溯源。 |
+| [06 内容工厂与工程组件](docs/projects/06-content-factories.md) | GEOFlow 生产管线思想、geoptimize 确定性 lint、dualmark 孪生页、语言级组件。 |
 
 ### 四、GEO 逆向（docs/reverse/）
 
@@ -108,7 +120,7 @@
 ## 资料口径说明
 
 - 所有数据均标注来源链接；标注"自报数据"的是厂商营销口径，未经独立核验。
-- GitHub star 数核验于 2026-11-05。
+- GitHub star 数核验于 2026-11-06（tools/02 与 projects/ 同批）。
 - 一手资料：arXiv / GitHub / X.com + CN-GEO 开源数据集实算（中文生态单独成篇）。
 - 方法论部分章节蒸馏自开源项目 geolook 的 references 方法层（判据均已溯源到公开实证数据）。
 
@@ -120,8 +132,9 @@ geo-book/
 ├── SUMMARY.md           # 学习路径与内容总结
 └── docs/
     ├── guide/           # 入门指南（10 篇）
-    ├── advanced/        # 进阶实践（13 篇）
-    ├── tools/           # 工具与开源项目（3 篇）
+    ├── advanced/        # 进阶实践（14 篇）
+    ├── tools/           # 工具与开源项目（3 篇·速查目录）
+    ├── projects/        # 开源项目深析（选型地图+四物种深析）
     ├── reverse/         # GEO 逆向（2 篇）
     ├── cn-vs-global/    # 国内外差异（2 篇）
     ├── news/            # 行业动态（1 篇·活页）
@@ -130,4 +143,4 @@ geo-book/
 
 ---
 
-**最后更新**：2026-11-05
+**最后更新**：2026-11-06

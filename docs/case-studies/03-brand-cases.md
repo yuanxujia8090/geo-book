@@ -34,4 +34,4 @@
 3. 一组锚点：品牌+品类固定搭配在第三方内容中反复共现。
 
 ---
-*上一篇：[中文引擎实测](02-cn-engine-tests.md) ｜ 回到 [README](../../README.md)*
+*上一篇：[中文引擎实测](02-cn-engine-tests.md) ｜ 回到 [导读](../WALKTHROUGH.md)*

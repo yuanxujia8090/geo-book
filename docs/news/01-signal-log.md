@@ -48,4 +48,4 @@
 | 2026-11-06 | 新增 star 异动信号 1 条（配合 projects/ 板块上线） |
 
 ---
-*上一篇：[中国官媒信源层](../cn-vs-global/02-cn-official-media.md) ｜ 回到 [README](../../README.md)*
+*上一篇：[中国官媒信源层](../cn-vs-global/02-cn-official-media.md) ｜ 回到 [导读](../WALKTHROUGH.md)*

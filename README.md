@@ -130,6 +130,10 @@
 geo-book/
 ├── README.md            # 本文件：总目录 + 每篇一句话简介
 ├── SUMMARY.md           # 学习路径与内容总结
+├── book.toml            # mdBook 配置（src=docs, build-dir=web）
+├── scripts/
+│   └── gen-web.py     # 生成 docs/SUMMARY.md（mdBook 导航）+ 构建 web/
+├── web/                 # mdBook 构建产物（html 站，勿手改）
 └── docs/
     ├── guide/           # 入门指南（10 篇）
     ├── advanced/        # 进阶实践（14 篇）
@@ -144,3 +148,5 @@ geo-book/
 ---
 
 **最后更新**：2026-11-06
+
+技术支持：[Otlume](https://www.otlume.com)

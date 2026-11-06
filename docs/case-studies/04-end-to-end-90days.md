@@ -59,4 +59,4 @@
 - 2026 playbook：https://www.bspkn.co/insights/optimize-for-ai-search-geo-playbook-2026/
 
 ---
-*上一篇：[GA4 AI 引荐配置](../advanced/10-ga4-ai-referral.md) ｜ 回到 [README](../../README.md)*
+*上一篇：[GA4 AI 引荐配置](../advanced/10-ga4-ai-referral.md) ｜ 回到 [导读](../WALKTHROUGH.md)*

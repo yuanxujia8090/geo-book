@@ -43,6 +43,9 @@ def main():
     r = subprocess.run(['mdbook', 'build'], cwd=ROOT)
     if r.returncode != 0:
         sys.exit('mdbook build FAILED')
+    s = subprocess.run([sys.executable, os.path.join(ROOT, 'scripts', 'seo-inject.py')], cwd=ROOT)
+    if s.returncode != 0:
+        sys.exit('seo-inject FAILED')
     print('web/ built OK')
     if '--serve' in sys.argv:
         subprocess.run(['python3', '-m', 'http.server', '8899', '--directory', os.path.join(ROOT, 'web')])

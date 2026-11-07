@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEO 知识库 · 知识地图</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-bg:#f8fafc; --c-canvas:#fff; --c-border:#cbd5e1; --c-border-strong:#94a3b8;
+  --c-text-main:#0f172a; --c-text-sub:#475569; --c-accent:#dc2626; --c-ink:#0f172a;
+  --font-ui:'Inter',-apple-system,'PingFang SC',sans-serif; --font-mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font-ui);background:var(--c-bg);padding:32px;color:var(--c-text-main)}
+.wrap{max-width:1280px;margin:0 auto}
+.canvas{background:var(--c-canvas);border:1px solid var(--c-border);padding:28px}
+.header{border-bottom:2px solid var(--c-ink);padding-bottom:14px;margin-bottom:22px;display:flex;justify-content:space-between;align-items:flex-end}
+h1{font-size:22px;font-weight:700}
+.sub{font-size:11px;color:var(--c-text-sub);text-transform:uppercase;letter-spacing:.08em;font-family:var(--font-mono)}
+.meta{font-family:var(--font-mono);font-size:11px;color:var(--c-text-sub);text-align:right;line-height:1.8}
+
+/* 因果主线 */
+.spine{border:1px solid var(--c-border);padding:18px;margin-bottom:16px;background:#fff}
+.spine-label{font-family:var(--font-mono);font-size:10px;color:var(--c-text-sub);letter-spacing:.08em;margin-bottom:12px}
+.chain{display:flex;align-items:stretch}
+.chain-node{flex:1;min-width:0;border:1px solid var(--c-ink);padding:10px 6px;text-align:center;background:#fff;position:relative}
+.chain-node + .chain-node{border-left:none}
+.chain-node::after{content:'→';position:absolute;right:-7px;top:50%;transform:translateY(-50%);font-size:12px;color:#fff;background:var(--c-ink);width:14px;height:14px;line-height:14px;text-align:center;z-index:2}
+.chain-node:last-child::after{display:none}
+.cn-zh{font-size:13px;font-weight:600}
+.cn-en{font-family:var(--font-mono);font-size:10px;font-weight:500;color:var(--c-text-main);margin-top:3px;letter-spacing:.02em}
+.cn-refs{font-family:var(--font-mono);font-size:9px;color:var(--c-text-sub);margin-top:6px;border-top:1px dashed var(--c-border);padding-top:4px}
+
+/* 统一 12 列网格：三列 4/4/4，所有列缝对齐 x:33% 与 x:66% */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.zone{border:1px solid var(--c-border);background:#fff;display:flex;flex-direction:column}
+.zone-head{border-bottom:1px solid var(--c-border);padding:10px 14px;display:flex;justify-content:space-between;align-items:center}
+.zone-title{font-size:14px;font-weight:600}
+.zone-note{font-size:10px;color:var(--c-text-sub);font-family:var(--font-mono)}
+.zone-count{font-family:var(--font-mono);font-size:10px;color:#fff;background:var(--c-ink);padding:1px 7px;flex-shrink:0;margin-left:8px}
+.zone-q{font-size:11px;color:var(--c-text-sub);padding:8px 14px 0;font-style:italic}
+.nodes{padding:10px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.node{border:1px solid var(--c-border);padding:6px 10px;font-size:12px;display:flex;gap:8px;align-items:center;background:#fff;min-height:30px}
+.node b{font-family:var(--font-mono);font-size:10px;color:var(--c-text-sub);flex-shrink:0}
+.node .tag{margin-left:auto;flex-shrink:0;font-family:var(--font-mono);font-size:9px;border:1px solid var(--c-border-strong);padding:0 5px;color:var(--c-text-sub)}
+.node.key{border-left:3px solid var(--c-ink)}
+.node.live{border-left:3px solid var(--c-accent)}
+.span-4{grid-column:span 4}
+.col-stack{grid-column:span 4;display:flex;flex-direction:column;gap:14px}
+.col-stack .zone{flex:1}
+
+/* 通栏行 */
+.full{grid-column:span 12;border:1px solid var(--c-border);background:#fff}
+.full-head{border-bottom:1px solid var(--c-border);padding:10px 14px;display:flex;justify-content:space-between;align-items:center}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:12px 14px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px 14px}
+
+/* 底部：路径 + 铁律（7/5 → 与列缝无关，用 8/4 对齐 x:33%/66% 之间不行；用 4+4+4 切分） */
+.bottom{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:14px}
+.path{grid-column:span 8;border:1px solid var(--c-border);padding:14px 18px}
+.rules{grid-column:span 4;border:1px solid var(--c-ink);padding:14px 18px}
+.path ol{margin:10px 0 0 18px;font-size:12px;line-height:2.05}
+.path ol li::marker{font-family:var(--font-mono);font-size:11px;color:var(--c-text-sub)}
+.rules ul{margin:10px 0 0 18px;font-size:12px;line-height:2}
+.rules li b{color:var(--c-accent)}
+.legend{display:flex;gap:16px;margin-top:12px;padding-top:10px;border-top:1px dashed var(--c-border);font-size:11px;color:var(--c-text-sub);flex-wrap:wrap}
+.lg{display:flex;align-items:center;gap:6px}
+.sw{width:16px;height:10px;border:1px solid var(--c-border-strong);display:inline-block}
+.sw.key{border-left:3px solid var(--c-ink)}
+.sw.live{border-left:3px solid var(--c-accent)}
+.sw.blk{background:var(--c-ink);border-color:var(--c-ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="canvas">
+
+  <header class="header">
+    <div>
+      <h1>GEO 知识库 · 知识地图</h1>
+      <div class="sub">GEO BOOK — KNOWLEDGE MAP / 36 DOCS / 7 ZONES</div>
+    </div>
+    <div class="meta">REV 2026-11-05 · git main<br>guide 11 · adv 13 · rev 2 · cn 2<br>news 1 · tools 3 · cases 4 · 合计 36</div>
+  </header>
+
+  <!-- 因果主线 -->
+  <section class="spine">
+    <div class="spine-label">CORE CAUSAL CHAIN ／ 核心因果链——所有文档挂在这条线上</div>
+    <div class="chain">
+      <div class="chain-node"><div class="cn-zh">进得来</div><div class="cn-en">ACCESS</div><div class="cn-refs">guide/04 · adv/09</div></div>
+      <div class="chain-node"><div class="cn-zh">找得到</div><div class="cn-en">ORIENT</div><div class="cn-refs">adv/09 · guide/09</div></div>
+      <div class="chain-node"><div class="cn-zh">看得懂</div><div class="cn-en">UNDERSTAND</div><div class="cn-refs">adv/02/03/13</div></div>
+      <div class="chain-node"><div class="cn-zh">抄得走</div><div class="cn-en">QUOTABLE</div><div class="cn-refs">adv/01/11/08</div></div>
+      <div class="chain-node"><div class="cn-zh">信得过</div><div class="cn-en">TRUST</div><div class="cn-refs">adv/04/05 · cn/02</div></div>
+      <div class="chain-node"><div class="cn-zh">被引用</div><div class="cn-en">CITED</div><div class="cn-refs">guide/05 · cn/01</div></div>
+      <div class="chain-node"><div class="cn-zh">可归因</div><div class="cn-en">MEASURE</div><div class="cn-refs">adv/07/10/12</div></div>
+    </div>
+  </section>
+
+  <div class="grid">
+
+    <!-- 第一行：4 / 4 / 4 -->
+    <section class="zone span-4">
+      <div class="zone-head"><span class="zone-title">① 入门指南</span><span class="zone-count">11</span></div>
+      <div class="zone-q">"AI 是怎么找到并引用内容的？"</div>
+      <div class="nodes">
+        <div class="node"><b>01</b>什么是 GEO</div>
+        <div class="node"><b>02</b>GEO / SEO / AEO 辨析</div>
+        <div class="node"><b>03</b>AI 搜索原理（RAG）</div>
+        <div class="node"><b>04</b>AI 爬虫与 robots</div>
+        <div class="node"><b>05</b>引用机制</div>
+        <div class="node"><b>06</b>海外引擎画像</div>
+        <div class="node"><b>07</b>中文引擎生态</div>
+        <div class="node key"><b>08</b>上手首查 · 30 分钟</div>
+        <div class="node key"><b>09</b>提示词与问题集</div>
+        <div class="node key"><b>10</b>中文信源实测榜</div>
+        <div class="node key"><b>11</b>新站冷启动</div>
+      </div>
+    </section>
+
+    <section class="zone span-4">
+      <div class="zone-head"><span class="zone-title">② 进阶实践</span><span class="zone-note">↓ 按执行序</span><span class="zone-count">13</span></div>
+      <div class="zone-q">"按什么顺序、改成什么样？"</div>
+      <div class="nodes">
+        <div class="node key"><b>11</b>四层模型 · 量化判据<span class="tag">定序</span></div>
+        <div class="node key"><b>09</b>技术可达性实操<span class="tag">最硬</span></div>
+        <div class="node"><b>02</b>Schema 结构化数据</div>
+        <div class="node"><b>03</b>llms.txt 实战</div>
+        <div class="node"><b>13</b>品牌事实卡与模板</div>
+        <div class="node"><b>01</b>内容优化八法</div>
+        <div class="node"><b>08</b>工作流与审计清单<span class="tag">SOP</span></div>
+        <div class="node"><b>04</b>E-E-A-T 权威信号</div>
+        <div class="node"><b>05</b>第三方声量</div>
+        <div class="node"><b>06</b>训练数据层</div>
+        <div class="node"><b>12</b>采样纪律·证据分级</div>
+        <div class="node"><b>07</b>度量与监测</div>
+        <div class="node"><b>10</b>GA4 AI 引荐配置</div>
+      </div>
+    </section>
+
+    <div class="col-stack">
+      <section class="zone">
+        <div class="zone-head"><span class="zone-title">③ GEO 逆向</span><span class="zone-count">2</span></div>
+        <div class="zone-q">"从引擎行为反推规则"</div>
+        <div class="nodes">
+          <div class="node"><b>01</b>黑盒探测五手法<span class="tag">金丝雀</span></div>
+          <div class="node"><b>02</b>拆竞品引用五步</div>
+        </div>
+      </section>
+      <section class="zone">
+        <div class="zone-head"><span class="zone-title">④ 国内外差异</span><span class="zone-count">2</span></div>
+        <div class="zone-q">"中文不是英文的翻译版"</div>
+        <div class="nodes">
+          <div class="node"><b>01</b>结构性差异总览</div>
+          <div class="node"><b>02</b>官媒信源层与发稿</div>
+        </div>
+      </section>
+      <section class="zone">
+        <div class="zone-head"><span class="zone-title">⑤ 行业动态</span><span class="zone-count">1</span></div>
+        <div class="zone-q">"活页勘误表 · 月度维护"</div>
+        <div class="nodes">
+          <div class="node live"><b>01</b>信号日志<span class="tag">LIVE</span></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 第二行：通栏 tools（等宽三列） -->
+    <section class="full">
+      <div class="full-head"><span class="zone-title">⑥ 工具与开源项目</span><span class="zone-note">star 数 = GitHub API 一手核验 2026-11-05</span><span class="zone-count">3</span></div>
+      <div class="trio">
+        <div class="node"><b>01</b>选型总览：免费 vs 商业</div>
+        <div class="node"><b>02</b>开源：geolook / GEOLab / elmo…</div>
+        <div class="node"><b>03</b>商业：Profound / Peec / Otterly</div>
+      </div>
+    </section>
+
+    <!-- 第三行：cases 通栏（等宽四列） -->
+    <section class="full">
+      <div class="full-head"><span class="zone-title">⑦ 案例分析</span><span class="zone-note">研究摘要 ≠ 操作案例；04 是操作节奏参照</span><span class="zone-count">4</span></div>
+      <div class="duo" style="grid-template-columns:repeat(4,1fr)">
+        <div class="node"><b>01</b>AI Overviews 引用研究</div>
+        <div class="node"><b>02</b>中文引擎实测</div>
+        <div class="node"><b>03</b>品牌 GEO 案例</div>
+        <div class="node key"><b>04</b>90 天端到端推演<span class="tag">节奏</span></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 路径 + 铁律：8/4，列缝对齐 x:66% -->
+  <div class="bottom">
+    <section class="path">
+      <div class="spine-label">LEARNING PATH ／ 新手执行序（读的顺序 = 干的顺序）</div>
+      <ol>
+        <li><b>guide/01-07</b> 建心智模型 —— 世界变了 + 引擎怎么工作</li>
+        <li><b>guide/09 → 08</b> 攒冻结问题集 → 30 分钟首查出基线</li>
+        <li><b>adv/11 → 09</b> 四层模型定顺序 → 修可达性（CSR 是头号坑）</li>
+        <li><b>adv/13 → 01</b> 事实卡统一口径 → 按量化判据改内容</li>
+        <li><b>cn/01-02 + guide/10</b> 选阵地：中文进生态池 + 官媒锚点</li>
+        <li><b>adv/12 → 07 → 10</b> 采样纪律 → 手工监测 → GA4 归因下界</li>
+        <li><b>guide/11 / reverse/*</b> 新站走冷启动 · 卡壳做逆向</li>
+      </ol>
+    </section>
+    <section class="rules">
+      <div class="spine-label">THREE IRON RULES ／ 全库三铁律</div>
+      <ul>
+        <li><b>依赖有序</b>：访问层不通，内容全白做</li>
+        <li><b>数据可溯</b>：数字标来源与置信级</li>
+        <li><b>测量防自欺</b>：冻结集·多采样·报下界</li>
+      </ul>
+      <div class="legend">
+        <span class="lg"><span class="sw key"></span>动手起点</span>
+        <span class="lg"><span class="sw live"></span>活页</span>
+        <span class="lg"><span class="sw blk"></span>因果链</span>
+      </div>
+    </section>
+  </div>
+
+</div>
+</div>
+</body>
+</html>

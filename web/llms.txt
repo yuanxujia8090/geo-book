@@ -1,0 +1,68 @@
+# GEO 知识库
+
+> 中文 GEO（生成式引擎优化）知识库：让 ChatGPT、Gemini、Perplexity、豆包、DeepSeek 引用你的内容、提及你的品牌。45 章，数据 GitHub/API 一手核验，作者 Aaron（袁旭佳）。
+
+- 站点: <https://yuanxujia8090.github.io/geo-book/>
+- 仓库: <https://github.com/yuanxujia8090/geo-book>
+- 全文: <https://yuanxujia8090.github.io/geo-book/llms-full.txt>
+
+## 章节
+
+### 入门指南
+- [什么是 GEO（Generative Engine Optimization）](https://yuanxujia8090.github.io/geo-book/guide/01-what-is-geo.html)
+- [GEO vs SEO vs AEO](https://yuanxujia8090.github.io/geo-book/guide/02-geo-vs-seo-vs-aeo.html)
+- [AI 搜索的工作原理（RAG 入门）](https://yuanxujia8090.github.io/geo-book/guide/03-how-ai-search-works.html)
+- [AI 爬虫与抓取（robots.txt 决策）](https://yuanxujia8090.github.io/geo-book/guide/04-ai-crawlers.html)
+- [AI 引用机制：引擎如何选中一个来源](https://yuanxujia8090.github.io/geo-book/guide/05-how-ai-engines-cite.html)
+- [主流海外 AI 引擎画像](https://yuanxujia8090.github.io/geo-book/guide/06-major-engines.html)
+- [中文 AI 引擎生态](https://yuanxujia8090.github.io/geo-book/guide/07-chinese-ai-engines.html)
+- [上手首查：30 分钟站点自检](https://yuanxujia8090.github.io/geo-book/guide/08-first-audit.html)
+- [提示词与问题集研究（Prompt Research）](https://yuanxujia8090.github.io/geo-book/guide/09-prompt-research.html)
+- [中文信源生态实测榜](https://yuanxujia8090.github.io/geo-book/guide/10-cn-source-ranking.html)
+- [新站冷启动：从零到第一次被引用](https://yuanxujia8090.github.io/geo-book/guide/11-cold-start.html)
+
+### 进阶实践
+- [GEO 内容优化：让 AI 想引用的写法](https://yuanxujia8090.github.io/geo-book/advanced/01-content-optimization.html)
+- [结构化数据与 Schema](https://yuanxujia8090.github.io/geo-book/advanced/02-schema-structured-data.html)
+- [llms.txt 实战](https://yuanxujia8090.github.io/geo-book/advanced/03-llms-txt.html)
+- [E-E-A-T 与权威信号](https://yuanxujia8090.github.io/geo-book/advanced/04-eeat-authority.html)
+- [第三方声量建设](https://yuanxujia8090.github.io/geo-book/advanced/05-third-party-presence.html)
+- [进入 LLM 训练数据（长期层）](https://yuanxujia8090.github.io/geo-book/advanced/06-training-data-visibility.html)
+- [GEO 度量与监测](https://yuanxujia8090.github.io/geo-book/advanced/07-measurement.html)
+- [GEO 工作流与审计清单](https://yuanxujia8090.github.io/geo-book/advanced/08-workflow-checklist.html)
+- [技术可达性实操：让爬虫真正拿到内容](https://yuanxujia8090.github.io/geo-book/advanced/09-technical-accessibility.html)
+- [GA4 配置 AI 引荐流量](https://yuanxujia8090.github.io/geo-book/advanced/10-ga4-ai-referral.html)
+- [四层依赖模型与量化判据](https://yuanxujia8090.github.io/geo-book/advanced/11-four-layer-model.html)
+- [采样纪律与证据分级](https://yuanxujia8090.github.io/geo-book/advanced/12-sampling-discipline.html)
+- [品牌事实卡与内容模板](https://yuanxujia8090.github.io/geo-book/advanced/13-brand-facts-templates.html)
+- [引擎偏好规则与内容重写](https://yuanxujia8090.github.io/geo-book/advanced/14-preference-rules-rewriting.html)
+
+### 开源项目深析
+- [GEO 开源项目选型地图](https://yuanxujia8090.github.io/geo-book/projects/01-selection-map.html)
+- [实施平台深析：geolook / GEORank / GEOFlow / GEOInflow](https://yuanxujia8090.github.io/geo-book/projects/02-implementation-platforms.html)
+- [监测类平台对比：elmo / limelit / geo-aeo-tracker / oneglanse / gego](https://yuanxujia8090.github.io/geo-book/projects/03-monitoring-trackers.html)
+- [Agent 技能包深析：gtm-engineer-skills / geo-optimizer-skill / yao-geo-skills / geo-doctor / recomby-geo](https://yuanxujia8090.github.io/geo-book/projects/04-agent-skills.html)
+- [研究框架与数据集深析：AutoGEO / GEOLab / E-GEO / SafeGEO / AgenticGEO / MAGEO](https://yuanxujia8090.github.io/geo-book/projects/05-research-frameworks.html)
+- [内容工厂与工程组件：GEOFlow 生产侧 / geoptimize / dualmark / 语言级组件](https://yuanxujia8090.github.io/geo-book/projects/06-content-factories.html)
+
+### 工具
+- [GEO 工具总览](https://yuanxujia8090.github.io/geo-book/tools/01-tools-overview.html)
+- [GEO 开源项目](https://yuanxujia8090.github.io/geo-book/tools/02-open-source.html)
+- [商业 GEO 监测平台](https://yuanxujia8090.github.io/geo-book/tools/03-commercial-platforms.html)
+
+### GEO 逆向
+- [GEO 逆向（一）：黑盒里探规则](https://yuanxujia8090.github.io/geo-book/reverse/01-black-box-probing.html)
+- [GEO 逆向（二）：拆竞品的引用](https://yuanxujia8090.github.io/geo-book/reverse/02-competitor-reverse.html)
+
+### 国内外差异
+- [国内外 GEO 结构性差异总览](https://yuanxujia8090.github.io/geo-book/cn-vs-global/01-structural-differences.html)
+- [中国官媒信源层与发稿打法](https://yuanxujia8090.github.io/geo-book/cn-vs-global/02-cn-official-media.html)
+
+### 行业动态
+- [行业动态信号日志](https://yuanxujia8090.github.io/geo-book/news/01-signal-log.html)
+
+### 案例分析
+- [案例 1：AI Overviews 引用行为研究](https://yuanxujia8090.github.io/geo-book/case-studies/01-ai-overview-studies.html)
+- [案例 2：中文引擎实测](https://yuanxujia8090.github.io/geo-book/case-studies/02-cn-engine-tests.html)
+- [案例 3：品牌 GEO 案例与效应](https://yuanxujia8090.github.io/geo-book/case-studies/03-brand-cases.html)
+- [案例 4：端到端 90 天 GEO 实战（虚拟推演）](https://yuanxujia8090.github.io/geo-book/case-studies/04-end-to-end-90days.html)
